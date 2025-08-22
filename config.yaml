@@ -1,0 +1,59 @@
+# Fichier : config.yaml
+# AJOUT : Une clé dédiée pour les en-têtes requis lors de l'import.
+
+app:
+  title: "Gestion des Congés"
+  version: "3.2 - Final"
+
+db:
+  filename: "conges_v3.db"
+  certificates_dir: "certificats"
+
+paths:
+  templates_dir: "templates"
+
+conges:
+  maternite_duree: 98
+  paternite_duree: 15
+  types_decompte_solde:
+    - "Congé annuel"
+  holidays_country: 'MA'
+  solde_annuel_par_defaut: 22.0
+
+ui:
+  grades:
+    - "Professeur"
+    - "PA"
+    - "Infirmier"
+    - "Technicien de santé"
+    - "Administrateur"
+    - "Technicien"
+    - "Adjoint Technique"
+    - "Adjoint Administratif"
+    
+  types_conge:
+    - "Congé annuel"
+    - "Congé exceptionnel"
+    - "Congé de maladie"
+    - "Congé de maternité"
+    - "Congé de paternité"
+  
+  certificat_file_types:
+    - ("Documents PDF", "*.pdf")
+    - ("Images", "*.png *.jpg *.jpeg *.gif")
+    - ("Tous les fichiers", "*.*")
+
+  # Noms des colonnes (en-têtes) reconnues dans le fichier Excel d'import.
+  agent_import_headers:
+    - ppr
+    - nom
+    - prenom
+    - grade
+    - solde_2023
+    - solde_2024
+    - solde_2025
+
+  # NOUVELLE CLE : Liste des colonnes qui doivent obligatoirement être présentes.
+  agent_import_headers_required:
+    - nom
+    - prenom
